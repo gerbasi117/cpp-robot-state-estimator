@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 struct SensorReading {
     double timestamp_s{};
     double gps_x_m{};
@@ -16,4 +18,10 @@ struct RobotState {
     double heading_deg{};
     double velocity_mps{};
     double confidence{};
+};
+
+struct EstimatedFrame {
+    SensorReading reading{};
+    RobotState state{};
+    std::string health{};
 };

@@ -10,6 +10,7 @@ include_directories(include)
 add_library(estimator_lib
     src/StateEstimator.cpp
     src/SensorHealth.cpp
+    src/RunSummary.cpp
 )
 
 add_executable(robot_state_estimator src/main.cpp)

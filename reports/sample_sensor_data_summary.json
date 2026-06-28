@@ -1,0 +1,17 @@
+{
+  "scenario": "sample_sensor_data",
+  "final_status": "CAUTION",
+  "samples": 15,
+  "duration_s": 14.000,
+  "average_confidence": 0.993,
+  "minimum_confidence": 0.900,
+  "final_x_m": 8.043,
+  "final_y_m": 4.296,
+  "final_heading_deg": 102.147,
+  "gps_invalid_samples": 0,
+  "imu_invalid_samples": 0,
+  "rangefinder_invalid_samples": 0,
+  "rangefinder_close_samples": 1,
+  "velocity_invalid_samples": 0,
+  "low_battery_samples": 0
+}

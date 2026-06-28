@@ -12,4 +12,6 @@ private:
     double alpha_;
     bool initialized_;
     RobotState state_;
+
+    static double normalizeHeading(double heading_deg);
 };

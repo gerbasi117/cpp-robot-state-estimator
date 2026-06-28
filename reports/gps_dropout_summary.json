@@ -1,0 +1,17 @@
+{
+  "scenario": "gps_dropout",
+  "final_status": "UNSAFE",
+  "samples": 11,
+  "duration_s": 10.000,
+  "average_confidence": 0.895,
+  "minimum_confidence": 0.650,
+  "final_x_m": 5.497,
+  "final_y_m": 2.042,
+  "final_heading_deg": 98.168,
+  "gps_invalid_samples": 3,
+  "imu_invalid_samples": 0,
+  "rangefinder_invalid_samples": 0,
+  "rangefinder_close_samples": 1,
+  "velocity_invalid_samples": 0,
+  "low_battery_samples": 0
+}

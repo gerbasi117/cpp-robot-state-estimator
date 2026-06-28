@@ -1,0 +1,17 @@
+{
+  "scenario": "low_battery_fault",
+  "final_status": "UNSAFE",
+  "samples": 7,
+  "duration_s": 6.000,
+  "average_confidence": 0.871,
+  "minimum_confidence": 0.800,
+  "final_x_m": 3.504,
+  "final_y_m": 0.775,
+  "final_heading_deg": 94.283,
+  "gps_invalid_samples": 0,
+  "imu_invalid_samples": 0,
+  "rangefinder_invalid_samples": 0,
+  "rangefinder_close_samples": 0,
+  "velocity_invalid_samples": 0,
+  "low_battery_samples": 3
+}

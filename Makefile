@@ -1,22 +1,29 @@
-CXX := g++
+CXX ?= g++
 CXXFLAGS := -std=c++17 -Wall -Wextra -O2 -Iinclude
 
-SRC := src/StateEstimator.cpp src/SensorHealth.cpp
+APP := robot_state_estimator
+TEST := estimator_tests
+SRCS := src/StateEstimator.cpp src/SensorHealth.cpp src/RunSummary.cpp
 
-all: robot_state_estimator estimator_tests
+.PHONY: all test clean demo
 
-robot_state_estimator: src/main.cpp $(SRC)
-	$(CXX) $(CXXFLAGS) src/main.cpp $(SRC) -o robot_state_estimator
+all: $(APP) $(TEST)
 
-estimator_tests: tests/estimator_tests.cpp $(SRC)
-	$(CXX) $(CXXFLAGS) tests/estimator_tests.cpp $(SRC) -o estimator_tests
+$(APP): src/main.cpp $(SRCS) include/*.hpp
+	$(CXX) $(CXXFLAGS) src/main.cpp $(SRCS) -o $(APP)
 
-run: robot_state_estimator
-	./robot_state_estimator data/sample_sensor_data.csv
+$(TEST): tests/estimator_tests.cpp $(SRCS) include/*.hpp
+	$(CXX) $(CXXFLAGS) tests/estimator_tests.cpp $(SRCS) -o $(TEST)
 
-test: estimator_tests
-	./estimator_tests
+test: all
+	./$(TEST)
+
+demo: all
+	mkdir -p demo reports
+	./$(APP) data/sample_sensor_data.csv --output demo/sample_output.csv --summary reports/sample_summary.md --json reports/sample_summary.json
+	./$(APP) data/gps_dropout.csv --output demo/gps_dropout_output.csv --summary reports/gps_dropout_summary.md --json reports/gps_dropout_summary.json
+	./$(APP) data/noisy_imu.csv --output demo/noisy_imu_output.csv --summary reports/noisy_imu_summary.md --json reports/noisy_imu_summary.json
 
 clean:
-	rm -f robot_state_estimator estimator_tests
+	rm -f $(APP) $(TEST)
 	rm -rf build

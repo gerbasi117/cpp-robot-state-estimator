@@ -1,0 +1,17 @@
+{
+  "scenario": "noisy_imu",
+  "final_status": "UNSAFE",
+  "samples": 11,
+  "duration_s": 10.000,
+  "average_confidence": 0.945,
+  "minimum_confidence": 0.750,
+  "final_x_m": 5.913,
+  "final_y_m": 2.207,
+  "final_heading_deg": 116.516,
+  "gps_invalid_samples": 0,
+  "imu_invalid_samples": 2,
+  "rangefinder_invalid_samples": 0,
+  "rangefinder_close_samples": 1,
+  "velocity_invalid_samples": 0,
+  "low_battery_samples": 0
+}

@@ -2,3 +2,5 @@ build/
 *.o
 *.out
 .DS_Store
+robot_state_estimator
+estimator_tests
